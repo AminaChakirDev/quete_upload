@@ -43,7 +43,10 @@ if(isset($_POST['submit'])){
         <?php
         $it = new FilesystemIterator(__DIR__.'/uploads');
         foreach ($it as $fileinfo) {
-            echo $fileinfo->getFilename() . "<br>";
+            echo "<li><figure>";
+            echo "<img src=\"" . '/uploads/' . $fileinfo->getFilename() . "\">";
+            echo "<figcaption>" . $fileinfo->getFilename() . "</figcaption>";
+            echo "</figure></li><br>";
         }
         ?>
     </body>
